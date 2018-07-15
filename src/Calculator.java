@@ -9,7 +9,7 @@ public class Calculator {
             int num1 = Integer.parseInt(args[0]);
             int num2 = Integer.parseInt(args[2]); 
             String sign = args[1];
-            int result = calcFunction(num1, sign, num2);
+            int result = calcswitchFunction(num1, sign, num2);
             System.out.println(result);       
         }
      }  
@@ -29,6 +29,17 @@ public class Calculator {
         }
         else {
             System.out.println("Please enter valid operator");
+        }
+        return result;
+    }
+    public static int calcswitchFunction(int num1, String sign, int num2){
+        int result = 0;
+        switch(sign){
+            case "+": result = num1 + num2; break;
+            case "-": result = num1 - num2; break; 
+            case "x": result = num1 * num2; break; 
+            case "/": result = num1 / num2; break; 
+            default: System.out.println("Please enter valid operator"); 
         }
         return result;
     }
